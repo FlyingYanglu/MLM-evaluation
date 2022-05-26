@@ -56,12 +56,15 @@ Then you can run `python calculate_accuracy.py <Path of original_character.txt> 
  **For Sentence Clustering task**
  <sub> Note: This is an adaptation from Evaluation of Pretrained BERT Model by Using Sentence Clusterin by Naoki et al.</sub>
  
- For Sentence Clustering Task. You should run your LM through all datasets you want to test clustering on. The dataset should contain sentences from different domain, e.g. medicine journal and fashion journal, so that we can test how well the Bert perform on finding adequate embedding for sentence from different domain. 
+ 1. For Sentence Clustering Task. You should run your LM through all datasets you want to test clustering on. The dataset should contain sentences from different domain, e.g. medicine journal and fashion journal, so that we can test how well the Bert perform on finding adequate embedding for sentence from different domain. 
  
  In our scenario, you can use the data from three domains in the Otaku Benchmark dataset. 
  
- You should run BERT to generate representation for each japanese original txt file in the data. Then you should extract the CLS embedding for each sentence, as we will use it as a representation for the whole sentence. Store the CLS embeddings in a json file similar to the example.json file. 
+ 2. You should run BERT to generate representation for each japanese original txt file in the data. 
+
+
+ 3. Then you should extract the CLS embedding for each sentence, as we will use it as a representation for the whole sentence. Store the CLS embeddings in a json file similar to the example.json file. 
  
- Then under the sent_clustering_task directory, run `python 'calculate clustering score'.py example.json` will generate the performance score for your LM.
+ 4. Then under the sent_clustering_task directory, run `python 'calculate clustering score'.py example.json` will generate the performance score for your LM.
  
  
