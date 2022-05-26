@@ -1,0 +1,14 @@
+{"Fields": 
+        {"Vision_Novel": 
+                {"cls_token": []
+                }
+            , "Light_Novel": 
+                {"cls_token": []
+                }
+            , "Manga": 
+                {"cls_token": []
+                }
+            
+        }
+    
+}
