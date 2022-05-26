@@ -1,1 +1,1 @@
-
+All useful functions are inside calculate_ppls_utils.py, including creating custom dataset and calculate PPLs from the processed output file. May need to process the output from your model to adapt to the calculate ppl function. 
