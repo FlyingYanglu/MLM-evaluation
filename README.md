@@ -65,4 +65,12 @@ Then you can run `python calculate_accuracy.py <Path of original_character.txt> 
  
  4. Then under the sent_clustering_task directory, run `python 'calculate clustering score'.py example.json` will generate the performance score for your LM.
  
+ **For PPL**
  
+ Since this is a intrinsic metric, a google sentence piece tokenizer should be provided. The code helps with generating dataset, but it does not handle how you process the dataset. You can generate custom dataset by using prepare_dataset from the util file. Then you need to use your model to predict the masked tokens in the dataset and record the result in the format as described below. 
+ ```yaml
+{
+   'sent_index': [<IDs of the original sentence included in the prepared dataset>], 'target_logit':[<the log probability of the predicted masked token>]
+}
+
+Then you can use the dataset_to_logitsls to convert this dataset to a list and then feed it to calculate pppl to get a score for your model. 
