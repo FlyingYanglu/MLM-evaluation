@@ -72,5 +72,5 @@ Then you can run `python calculate_accuracy.py <Path of original_character.txt> 
 {
    'sent_index': [<IDs of the original sentence included in the prepared dataset>], 'target_logit':[<the log probability of the predicted masked token>]
 }
-
+```
 Then you can use the dataset_to_logitsls to convert this dataset to a list and then feed it to calculate pppl to get a score for your model. 
