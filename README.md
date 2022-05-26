@@ -46,12 +46,22 @@ Step 1: Generate Dataset
    - original_tokens is a list of original tokens in the [mask] location
    - mask is a boolean list specify which index of the char in original sentence is masked.  
 
-You should use your MLM to do this task and predict the token in the [mask] location. Then you can either just compare your pred to 'original_tokens' to get an accuracy score or you can save your prediction for [mask] location in each sentence as a string and write it one string per line to generate a file similar to the original_character.txt under pre generated data.
+You should use your MLM to do this task and predict the token in the [mask] location. Then you can either 
+   - just compare your pred to 'original_tokens' to get an accuracy score 
+   - or you can save your prediction for [mask] location in each sentence as a string and write it one string per line to generate a file similar to the original_character.txt under pre generated data.
 
 Then you can run `python calculate_accuracy.py <Path of original_character.txt> <Path of your pred.txt>` to get a score 
  
  
+ **For Sentence Clustering task**
+ <sub> Note: This is an adaptation from Evaluation of Pretrained BERT Model by Using Sentence Clusterin by Naoki et al.</sub>
  
+ For Sentence Clustering Task. You should run your LM through all datasets you want to test clustering on. The dataset should contain sentences from different domain, e.g. medicine journal and fashion journal, so that we can test how well the Bert perform on finding adequate embedding for sentence from different domain. 
  
+ In our scenario, you can use the data from three domains in the Otaku Benchmark dataset. 
+ 
+ You should run BERT to generate representation for each japanese original txt file in the data. Then you should extract the CLS embedding for each sentence, as we will use it as a representation for the whole sentence. Store the CLS embeddings in a json file similar to the example.json file. 
+ 
+ Then under the sent_clustering_task directory, run `python 'calculate clustering score'.py example.json` will generate the performance score for your LM.
  
  
