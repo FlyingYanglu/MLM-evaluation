@@ -16,12 +16,12 @@ parser = argparse.ArgumentParser()
 # lang = "en"
 
 # Adding optional argument
-parser.add_argument("-i", "--data_loc", default = "sample_data/humanTranslation.txt", type = str)
+parser.add_argument("-i", "--data_loc", default = "sample_data/humanTranslation.txt", help = "data file location", type = str)
 parser.add_argument("-o", "--output_dir", default = "generated_data", help = "file output dir", type = str)
-parser.add_argument("-t", "--generate_txt", default =False, action='store_true')
-parser.add_argument("-d", "--generate_dataset", default =False,action='store_true')
-parser.add_argument("-j", "--generate_json", default =False,action='store_true')
-parser.add_argument("-c", "--combine", default =False,action='store_true')
+parser.add_argument("-t", "--generate_txt", default =False, action='store_true', help = "if set, generate txt file")
+parser.add_argument("-d", "--generate_dataset", default =False,action='store_true', help = "if set, generate dataset")
+parser.add_argument("-j", "--generate_json", default =False,action='store_true', help = "if set, generate json file")
+parser.add_argument("-c", "--combine", default =False,action='store_true', help = "if set, generate combined txt file")
 parser.add_argument("-l", "--lang", default = "en")
 args = parser.parse_args()
 
