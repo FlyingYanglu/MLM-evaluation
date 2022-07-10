@@ -75,3 +75,21 @@ Then you can run `python calculate_accuracy.py <Path of original_character.txt> 
 }
 ```
 Then you can use the dataset_to_logitsls to convert this dataset to a list and then feed it to calculate pppl to get a score for your model. 
+
+# MLM-data generator
+
+To use the MLM data generator, you need to cd MLM_generator, and run 
+`python generate.py`
+
+### Flags
+ ```yaml
+ {
+"-i", "--data_loc", default = "sample_data/humanTranslation.txt", help = "data file location", type = str
+"-o", "--output_dir", default = "generated_data", help = "file output dir", type = str
+"-t", "--generate_txt", default = False, action = 'store_true', help = "if set, generate txt file"
+"-d", "--generate_dataset", default = False, action = 'store_true', help = "if set, generate dataset"
+"-j", "--generate_json", default = False, action = 'store_true', help = "if set, generate json file"
+"-c", "--combine", default = False, action = 'store_true', help = "if set, generate combined txt file"
+"-l", "--lang", default = "en"
+}
+```
