@@ -80,7 +80,8 @@ Then you can use the dataset_to_logitsls to convert this dataset to a list and t
 
 To use the MLM data generator, you need to cd MLM_generator, and run 
 `python generate.py`
-###Flags
+
+### Flags
  ```yaml
  {
 "-i", "--data_loc", default = "sample_data/humanTranslation.txt", help = "data file location", type = str
