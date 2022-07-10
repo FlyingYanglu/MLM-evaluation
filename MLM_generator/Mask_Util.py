@@ -59,7 +59,7 @@ def mask_sentence(sentence, mask_token, mask_ratio, lang="jp", sentence_as_list=
                     new_word = random_word(r)
 
                     sentence_as_list[i] = new_word
-                    print("this is new_word:", new_word)
+                    #print("this is new_word:", new_word)
                     #print("a")
                     #print(sentence_as_list[i])
                 else:
